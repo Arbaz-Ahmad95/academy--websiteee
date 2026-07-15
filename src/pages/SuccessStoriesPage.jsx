@@ -370,14 +370,16 @@ export default function SuccessStoriesPage() {
         <div className="ss-hero__grid">
           <div className="ss-hero__left">
             <h1 className="ss-hero__heading">
-              SUCCESS <span className="text-orange">STORIES</span>
+              <span className="ss-hero-line" style={{ animationDelay: '0ms' }}>SUCCESS <span className="text-orange">STORIES</span></span>
             </h1>
             <h2 className="ss-hero__subheading">
-              Real People. Real Journeys.<br />
-              Real Transformation.
+              <span className="ss-hero-line" style={{ animationDelay: '130ms' }}>Real People. Real Journeys.</span><br />
+              <span className="ss-hero-line" style={{ animationDelay: '260ms' }}>Real Transformation.</span>
             </h2>
             <p className="ss-hero__paragraph">
-              From career changers to freshers, IT professionals to non-technical learners – see how our learners are building future-ready careers in cybersecurity &amp; AI.
+              <span className="ss-hero-line" style={{ animationDelay: '390ms' }}>
+                From career changers to freshers, IT professionals to non-technical learners – see how our learners are building future-ready careers in cybersecurity &amp; AI.
+              </span>
             </p>
 
             <div className="ss-hero__stats">
@@ -539,7 +541,7 @@ export default function SuccessStoriesPage() {
             <div className="vt-heading-row">
               <span className="vt-line" />
               <h2 className="vt-heading">
-                JOURNEYS <span className="text-orange">THAT INSPIRE</span>
+                JOURNEYS <br className="jt-mobile-br" /><span className="text-orange">THAT INSPIRE</span>
               </h2>
               <span className="vt-line" />
             </div>

@@ -92,7 +92,7 @@ const heroFeatures = [
   { Icon: null, img: '/assets/icons/real-environment-icon.png', title: 'REAL ENVIRONMENT', sub: 'Not Simulations' },
   { Icon: null, img: '/assets/icons/real-threats-icon.png',     title: 'REAL THREATS',     sub: 'Not Theory' },
   { Icon: null, img: '/assets/icons/real-impact-icon.png',      title: 'REAL IMPACT',      sub: 'Not Assignments' },
-  { Icon: Rocket, title: 'REAL CAREERS',     sub: 'Not Promises' },
+  { Icon: null, img: '/assets/icons/real-careers-icon.png', title: 'REAL CAREERS',     sub: 'Not Promises' },
 ];
 
 const features03 = [
@@ -104,12 +104,12 @@ const features03 = [
 ];
 
 const expFeatureCards = [
-  { Icon: Monitor,  title: 'LIVE SOC ENVIRONMENT',                        desc: 'Work inside a real Security Operations Center.' },
-  { Icon: Database, title: 'LIVE DATA. REAL THREATS.',                    desc: 'Analyze real attack patterns, alerts, & incidents.' },
-  { Icon: Settings, title: 'ENTERPRISE-GRADE TOOLS',                      desc: 'Access the same tools used by top security teams.' },
-  { Icon: Users,    title: 'INDUSTRY PRACTITIONERS',                      desc: 'Learn directly from experts who defend every day.' },
-  { Icon: Cpu,      title: 'HYPER-NICHE, IN-DEMAND SKILLS',              desc: 'AI-powered security, threat hunting, cloud security, DFIR & more.' },
-  { Icon: Rocket,   title: 'CAREER SUPPORT THAT CONTINUES AFTER TRAINING', desc: 'We invest in your growth until you succeed.' },
+  { iconPath: '/assets/icons/live-soc-environment.png',  title: 'LIVE SOC ENVIRONMENT',                        desc: 'Work inside a real Security Operations Center.' },
+  { iconPath: '/assets/icons/live-data-real-threats.png', title: 'LIVE DATA. REAL THREATS.',                    desc: 'Analyze real attack patterns, alerts, & incidents.' },
+  { iconPath: '/assets/icons/enterprise-grade-tools.png', title: 'ENTERPRISE-GRADE TOOLS',                      desc: 'Access the same tools used by top security teams.' },
+  { iconPath: '/assets/icons/industry-practitioners.png',    title: 'INDUSTRY PRACTITIONERS',                      desc: 'Learn directly from experts who defend every day.' },
+  { iconPath: '/assets/icons/hyper-niche-skills.png',      title: 'HYPER-NICHE, IN-DEMAND SKILLS',              desc: 'AI-powered security, threat hunting, cloud security, DFIR & more.' },
+  { iconPath: '/assets/icons/career-support.png',   title: 'CAREER SUPPORT THAT CONTINUES AFTER TRAINING', desc: 'We invest in your growth until you succeed.' },
 ];
 
 export default function WhyGlobalSOCPage() {
@@ -145,7 +145,7 @@ export default function WhyGlobalSOCPage() {
 
           <div className="wgs-hero-text-wrap">
             {/* Label */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+            <div className="wgs-hero-line" style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12, animationDelay: '0ms' }}>
               <span style={{ width: 22, height: 1.5, background: '#FF7A00', display: 'inline-block', flexShrink: 0 }}/>
               <span style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: '2.5px', color: '#FF7A00', textTransform: 'uppercase' }}>
                 WHY GLOBAL SOC
@@ -161,19 +161,22 @@ export default function WhyGlobalSOCPage() {
               letterSpacing: '-0.5px',
               marginBottom: 14,
               color: '#fff',
+              display: 'flex',
+              flexDirection: 'column',
             }}>
-              NOT JUST TRAINING.<br/>
-              <span style={{ color: '#FF7A00' }}>REAL CYBER DEFENSE</span><br/>
-              EXPERIENCE.
+              <span className="wgs-hero-line" style={{ animationDelay: '130ms' }}>NOT JUST TRAINING.</span>
+              <span className="wgs-hero-line" style={{ color: '#FF7A00', animationDelay: '260ms' }}>REAL CYBER DEFENSE</span>
+              <span className="wgs-hero-line" style={{ animationDelay: '390ms' }}>EXPERIENCE.</span>
             </h1>
 
             {/* Paragraph */}
-            <p style={{
+            <p className="wgs-hero-line" style={{
               fontSize: 13,
               color: 'rgba(255,255,255,0.48)',
               lineHeight: 1.65,
               marginBottom: 24,
               maxWidth: 370,
+              animationDelay: '520ms',
             }}>
               Global SOC is not an academy.<br/>
               It's a real-world Security Operations Environment<br/>
@@ -208,7 +211,7 @@ export default function WhyGlobalSOCPage() {
                   </div>
                 )}
                 {!item.Icon && item.img && (
-                  <img src={item.img} alt={item.title} style={{ width: 52, height: 52, objectFit: 'contain', marginBottom: 8 }} />
+                  <img src={item.img} alt={item.title} style={{ width: 68, height: 68, objectFit: 'contain', marginBottom: 8 }} />
                 )}
                 <span style={{
                   fontSize: 8.5, fontWeight: 800, color: '#fff',
@@ -270,6 +273,16 @@ export default function WhyGlobalSOCPage() {
 
         {/* Responsive styles */}
         <style>{`
+          @keyframes wgsHeroLineIn {
+            from { opacity: 0; transform: translateY(36px); filter: blur(6px); }
+            to   { opacity: 1; transform: translateY(0);    filter: blur(0px); }
+          }
+          .wgs-hero-line {
+            display: inline-block;
+            opacity: 0;
+            animation: wgsHeroLineIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          }
+
           @media (max-width: 1100px) {
             .wgs-hero-left { padding-left: 48px !important; }
           }
@@ -364,13 +377,13 @@ export default function WhyGlobalSOCPage() {
         }}>
 
           {/* Section number */}
-          <div style={{ fontSize: 13, fontWeight: 900, color: '#FF7A00', letterSpacing: '1px', marginBottom: 8, fontFamily: 'monospace' }}>
+          <div style={{ fontSize: '32px', fontWeight: 900, color: '#FF7A00', letterSpacing: '1px', marginBottom: 8, fontFamily: 'monospace' }}>
             01
           </div>
 
           {/* Heading */}
           <h2 className="section-num-heading" style={{
-            fontSize: 'clamp(18px, 1.55vw, 22px)',
+            fontSize: 'clamp(20px, 1.8vw, 26px)',
             fontWeight: 900, color: '#fff',
             textTransform: 'uppercase',
             lineHeight: 1.15, letterSpacing: '-0.2px',
@@ -386,16 +399,16 @@ export default function WhyGlobalSOCPage() {
           </p>
 
           {/* 3×2 Feature Card Grid */}
-          <div className="exp-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+          <div className="exp-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
             {expFeatureCards.map((card, i) => (
               <div
                 key={i}
                 style={{
                   background: 'rgba(12,12,18,0.88)',
                   border: '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: 8,
-                  padding: '14px 13px',
-                  display: 'flex', flexDirection: 'column', gap: 8,
+                  borderRadius: 10,
+                  padding: '14px 14px',
+                  display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 0,
                   backdropFilter: 'blur(6px)',
                   WebkitBackdropFilter: 'blur(6px)',
                   transition: 'box-shadow 0.22s, border-color 0.22s',
@@ -410,17 +423,20 @@ export default function WhyGlobalSOCPage() {
                   e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)';
                 }}
               >
-                <div style={{ color: '#FF7A00' }}>
-                  <card.Icon size={24} strokeWidth={1.5} />
+                <div style={{ flexShrink: 0, width: 90, height: 90, overflow: 'hidden', marginRight: -18 }}>
+                  <img src={card.iconPath} alt="" style={{ width: 150, height: 150, objectFit: 'contain', display: 'block', marginTop: -30, marginBottom: -30, marginLeft: -10, marginRight: -20 }} />
                 </div>
-                <div style={{
-                  fontSize: 9, fontWeight: 800, color: '#fff',
-                  textTransform: 'uppercase', letterSpacing: '0.4px', lineHeight: 1.3,
-                }}>
-                  {card.title}
-                </div>
-                <div style={{ fontSize: 11, color: '#A0A0A0', lineHeight: 1.5 }}>
-                  {card.desc}
+                <div>
+                  <div style={{
+                    fontSize: 13, fontWeight: 800, color: '#fff',
+                    textTransform: 'uppercase', letterSpacing: '0.4px', lineHeight: 1.3,
+                    marginBottom: 4,
+                  }}>
+                    {card.title}
+                  </div>
+                  <div style={{ fontSize: 12, color: '#A0A0A0', lineHeight: 1.55 }}>
+                    {card.desc}
+                  </div>
                 </div>
               </div>
             ))}
@@ -447,10 +463,10 @@ export default function WhyGlobalSOCPage() {
         <div className="diff-section" style={{ display: 'flex', alignItems: 'center', gap: 48, width: '100%' }}>
 
           {/* LEFT — number + heading + para */}
-          <div style={{ flex: '0 0 230px', minWidth: 0 }}>
-            <div style={{ fontSize: 22, fontWeight: 900, color: '#FF7A00', marginBottom: 10, fontFamily: 'monospace', lineHeight: 1 }}>02</div>
-            <h2 className="section-num-heading" style={{ fontSize: 'clamp(18px, 1.55vw, 22px)', fontWeight: 900, color: '#fff', textTransform: 'uppercase', lineHeight: 1.15, letterSpacing: '-0.2px', marginBottom: 14 }}>
-              WHY GLOBAL SOC IS DIFFERENT
+          <div style={{ flex: '0 0 300px', minWidth: 0 }}>
+            <div style={{ fontSize: '32px', fontWeight: 900, color: '#FF7A00', marginBottom: 10, fontFamily: 'monospace', lineHeight: 1 }}>02</div>
+            <h2 className="section-num-heading" style={{ fontSize: 'clamp(20px, 1.8vw, 26px)', fontWeight: 900, color: '#fff', textTransform: 'uppercase', lineHeight: 1.15, letterSpacing: '-0.2px', marginBottom: 14 }}>
+              WHY GLOBAL SOC<br/>IS DIFFERENT
             </h2>
             <p style={{ fontSize: 12.5, color: '#A0A0A0', lineHeight: 1.7, margin: 0 }}>
               Most platforms teach.<br/>
@@ -620,7 +636,7 @@ export default function WhyGlobalSOCPage() {
 
           {/* LEFT — number + heading + para */}
           <div className="sec03-left" style={{
-            flex: '0 0 340px',
+            flex: '0 0 400px',
             padding: '10px 24px 10px 0',
             display: 'flex', flexDirection: 'column', justifyContent: 'center',
             borderRight: '1px solid rgba(255,255,255,0.06)',
