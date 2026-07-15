@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 3D cube top face -->
+  <polygon points="32,4 58,18 32,32 6,18" fill="#4ade80"/>
+  <!-- 3D cube left face -->
+  <polygon points="6,18 32,32 32,52 6,38" fill="#16a34a"/>
+  <!-- 3D cube right face -->
+  <polygon points="58,18 32,32 32,52 58,38" fill="#22c55e"/>
+  <!-- Highlight edges -->
+  <polyline points="32,4 58,18 32,32 6,18 32,4" fill="none" stroke="#bbf7d0" stroke-width="1.2"/>
+  <line x1="32" y1="32" x2="32" y2="52" stroke="#bbf7d0" stroke-width="1.2"/>
+  <line x1="6" y1="38" x2="58" y2="38" stroke="#bbf7d0" stroke-width="0.8" opacity="0.4"/>
+</svg>

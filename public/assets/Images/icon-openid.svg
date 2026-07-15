@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- OpenID logo: orange O with right-pointing flag/triangle -->
+  <!-- Letter O arc (left 270 degrees) -->
+  <path d="M 32 6 A 26 26 0 1 0 58 32" fill="none" stroke="#f58220" stroke-width="9" stroke-linecap="round"/>
+  <!-- Right flag/chevron -->
+  <polygon points="46,12 62,32 46,52 46,38 34,38 34,26 46,26" fill="#f58220"/>
+</svg>
